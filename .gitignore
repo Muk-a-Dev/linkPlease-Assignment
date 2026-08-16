@@ -1,0 +1,25 @@
+# SQLite Databases
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+demo_instagram_auto.db
+test_*.db
+instagram_auto.db
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment Variables & Local Secrets
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# System Files
+.DS_Store
+Thumbs.db
