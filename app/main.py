@@ -50,3 +50,8 @@ app.include_router(stats_router)
 @app.get("/")
 async def root():
     return {"service": "Instagram Automation Backend", "status": "running"}
+
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
