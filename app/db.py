@@ -4,7 +4,7 @@ import sqlite3
 import time
 from typing import Any, Dict, List, Optional
 
-DB_PATH = os.getenv("DATABASE_PATH", "instagram_auto.db")
+DB_PATH = os.getenv("DATABASE_PATH", "/tmp/instagram_auto.db")
 _db_lock = asyncio.Lock()
 _connection: Optional[sqlite3.Connection] = None
 

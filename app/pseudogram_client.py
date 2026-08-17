@@ -2,14 +2,12 @@ import os
 from typing import Any, Dict, Optional, Tuple
 import httpx
 
-PSEUDOGRAM_BASE_URL = os.getenv("PSEUDOGRAM_BASE_URL", "https://pseudogram-api.onrender.com")
-PSEUDOGRAM_API_KEY = os.getenv("PSEUDOGRAM_API_KEY", "test_secret")
-
 
 class PseudogramClient:
-    def __init__(self, base_url: str = PSEUDOGRAM_BASE_URL, api_key: str = PSEUDOGRAM_API_KEY, timeout: float = 10.0):
-        self.base_url = base_url.rstrip("/")
-        self.api_key = api_key
+    def __init__(self, timeout: float = 10.0):
+        # Read at instantiation time so Render-injected env vars are always used
+        self.base_url = os.getenv("PSEUDOGRAM_BASE_URL", "https://pseudogram-api.onrender.com").rstrip("/")
+        self.api_key = os.getenv("PSEUDOGRAM_API_KEY", "test_secret")
         self.timeout = timeout
 
     async def send_dm(
