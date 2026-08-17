@@ -37,6 +37,9 @@ A resilient single-process FastAPI service built to handle unreliable upstream c
   }
   ```
 
+### `GET /health`
+- Health check endpoint returning `{"status": "ok"}`.
+
 ---
 
 ## Project Structure
@@ -54,7 +57,7 @@ A resilient single-process FastAPI service built to handle unreliable upstream c
 │       ├── rules.py         # POST /rules route
 │       ├── webhook.py       # POST /webhook route
 │       └── stats.py         # GET /stats route
-├── scripts/                 # Utility scripts (demo, apply_and_keygen, simulate, submit, LOOM_SCRIPT)
+├── scripts/                 # Utility scripts (demo, apply_and_keygen, simulate, submit, test_live_server, LOOM_SCRIPT)
 ├── tests/                   # Pytest automated test suite
 ├── FAILURES.md              # Detailed analysis of edge-case failure modes
 ├── requirements.txt         # Dependency manifest
